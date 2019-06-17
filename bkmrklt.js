@@ -9,6 +9,8 @@ if (itemData == null || itemData == 'null') {
   itemData = [];
 }
 
+console.log(itemData);
+
 if (window.location.href.includes('bitskins')) {
   bit();
 }else if (window.location.href.includes('steamcommunity')) {
@@ -16,6 +18,7 @@ if (window.location.href.includes('bitskins')) {
 }
 
 //---------------- need to append to storage instead of overwriting so that bitskins and scm can display each other's floats -------
+//above may be incorrect. simpler to have different lists for scm and bitskins
 
 function bit() {
   //creating button to show itemdata in correct format
@@ -87,7 +90,7 @@ function scm() {
       background:{prop:'linear-gradient( to bottom, #5a1239 5%, #242b0b 95%)',style:'true'}
     },
     {
-      innerText:{prop:'Reset Float List'},
+      innerText:{prop:'Clear Float List'},
       background:{prop:'linear-gradient(rgb(155, 26, 26) 5%, rgb(62, 15, 15) 95%)',style:'true'}
     });
   resetBtn.addEventListener('click', function() {
