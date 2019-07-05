@@ -2,7 +2,7 @@
 var itemData;
 try {
   itemData = JSON.parse(localStorage.getItem('itemData'));
-}catch {
+}catch(error) {
   itemData = [];
 }
 if (itemData == null || itemData == 'null') {
@@ -33,7 +33,7 @@ function bit() {
     for (item of itemData) {
       try {
         showText += item + '\n';
-      }catch {
+      }catch(error) {
         //something wrong or can't be added
       }
     }
@@ -75,7 +75,7 @@ function scm() {
     for (item of itemData) {
       try {
         showText += item + '\n';
-      }catch {
+      }catch(error) {
         //something wrong or can't be added
       }
     }
