@@ -9,16 +9,11 @@ if (itemData == null || itemData == 'null') {
   itemData = [];
 }
 
-console.log(itemData);
-
 if (window.location.href.includes('bitskins')) {
   bit();
 }else if (window.location.href.includes('steamcommunity')) {
   scm();
 }
-
-//---------------- need to append to storage instead of overwriting so that bitskins and scm can display each other's floats -------
-//above may be incorrect. simpler to have different lists for scm and bitskins
 
 function bit() {
   //creating button to show itemdata in correct format
@@ -37,7 +32,7 @@ function bit() {
         //something wrong or can't be added
       }
     }
-    (showText === '') ? alert('No floats added') : alert(showText);
+    (showText === '') ? alert('No floats added') : prompt('Copy and paste this info', showText);
   });
   document.querySelector('div.col-md-8.col-sm-12.col-xs-12.col-md-offset-2.col-sm-offset-0.col-xs-offset-0').appendChild(showBtn);
 
@@ -79,7 +74,7 @@ function scm() {
         //something wrong or can't be added
       }
     }
-    (showText === '') ? alert('No floats added') : alert(showText);
+    (showText === '') ? alert('No floats added') : prompt('Copy and paste this info', showText);;
   });
   document.getElementById('floatUtilities').appendChild(showBtn);
 
