@@ -153,7 +153,9 @@ function bitBtns() {
       {
         className:{prop:'btn btn-success btn-xs added andersonp196'},
         marginLeft:{prop:'0.1px',style:'true'},
-        innerText:{prop:'Remove Float'}
+        innerText:{prop:'Remove Float'},
+        backgroundColor:{prop:'#960d0d', style:'true'},
+        border:{prop:'#960d0d', style:'true'}
       }) : floatBtn = createBtn(
       {
         className:{prop:'btn btn-success btn-xs andersonp196'},
@@ -168,11 +170,15 @@ function bitBtns() {
         //if the float has not been added yet
         this.classList.add('added');
         this.innerHTML = 'Remove Float';
+        this.style.backgroundColor = '#960d0d';
+        this.style.border = '#960d0d';
         itemData.push(info);
       }else {
         //if the float has previously been added
         this.classList.remove('added');
         this.innerHTML = 'Add Float';
+        this.style.backgroundColor = '';
+        this.style.border = '';
         itemData.splice(itemData.indexOf(info), 1);
       }
       localStorage.setItem('itemData', JSON.stringify(itemData));
